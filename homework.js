@@ -102,12 +102,24 @@ let shopItems = [
 shopItems.forEach(item => {   // when looping through objects must specify withs items.name in this case because it wont just get the ${name} for each item
     console.log('=======================================');
     console.log(`Name:      ${item.name}`);
-    console.log(`Price:     ${item.price}`);
+    console.log(`Price:     $${item.price}`);
     console.log(`About:     ${item.desc}`);
     console.log(`Category:  ${item.category}`);
 }
     )
 
+
+for (let item of shopItems){
+    console.log(
+        `
+        =============================
+        Name:      ${item.name}
+        Price:     $${item.price}
+        About:     ${item.desc}
+        Category:  ${item.category}
+        `
+    );
+}
 
 
 
@@ -132,6 +144,19 @@ console.log(reverseString('String'))
 
 
 
+function revString(str) {
+    return str.split('').reverse().join('');
+}
+
+
+
+function reverString(aString){
+    let stringSplit = aString.split('')
+    let stringReversed = stringSplit.reverse()
+    let newString = stringReversed.join('')
+    return newString
+}
+
 
 
 // Exercise #4
@@ -152,3 +177,18 @@ function removeDuplicates(arr) {
     return uniques
 };
 console.log(removeDuplicates(testArr2))
+
+
+
+
+
+function removeDupes(arr) {
+    return [...new Set(arr)];
+}
+
+
+
+
+function removeDupies(arr) {
+    return arr.filter((item, index) => arr.indexOf(item) === index)
+}
